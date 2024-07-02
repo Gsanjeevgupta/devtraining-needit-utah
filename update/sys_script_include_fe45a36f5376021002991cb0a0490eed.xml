@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.YourScriptInclude</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>YourScriptInclude</name>
+        <script><![CDATA[var YourScriptInclude = Class.create();
+YourScriptInclude.prototype = {
+    initialize: function() {
+    },
+
+    getDetails: function() {
+        var result = {};
+        // Example: Fetching data from 'example_table'
+        var gr = new GlideRecord('x_58872_needit_needit');
+        gr.query();
+        if (gr.next()) {
+            result.hotcut_disco = gr.getValue('hotcut_disco');
+            result.reason_type = gr.getValue('reason_type');
+            result.reason_code = gr.getValue('reason_code');
+        }
+        return JSON.stringify(result);
+    },
+
+    type: 'YourScriptInclude'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-21 11:02:02</sys_created_on>
+        <sys_id>fe45a36f5376021002991cb0a0490eed</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>YourScriptInclude</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_fe45a36f5376021002991cb0a0490eed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-24 04:51:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

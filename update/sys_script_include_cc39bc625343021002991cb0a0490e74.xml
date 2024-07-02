@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.GetSuppDetails</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GetSuppDetails</name>
+        <script><![CDATA[var GetSuppDetails = Class.create();
+GetSuppDetails.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	getDetails : function(){
+		var gs = new GlideRecord('x_58872_needit_needit');
+		gs.addQuery('number',this.getParameter('sysparm_order_id'));
+		gs.query();
+
+		gs.info("needitquery"+ gs);
+
+		
+	},
+    type: 'GetSuppDetails'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-30 06:38:42</sys_created_on>
+        <sys_id>cc39bc625343021002991cb0a0490e74</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetSuppDetails</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_cc39bc625343021002991cb0a0490e74</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-30 06:38:42</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="email_client=true,hasWorkflow=true,live_feed=true,all_tables.query_hints=true" audit="true" db_object_id="d79f659a8db0021087de63ac7f1f00a4" extends="task" label="Incident" max_length="40" name="incident" text_index="true" type="collection">
+        <element default="true" label="Hotcut" max_length="40" name="x_58872_needit_hotcut" type="boolean"/>
+    </element>
+</database>

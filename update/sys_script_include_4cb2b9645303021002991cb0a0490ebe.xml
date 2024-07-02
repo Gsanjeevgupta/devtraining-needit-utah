@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_58872_needit.GetNeeditDetails</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GetNeeditDetails</name>
+        <script><![CDATA[var GetNeeditDetails = Class.create();
+GetNeeditDetails.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    getDetails: function() {
+        var recordId = this.getParameter('sysparm_record_id');
+        var result = {};
+
+        var gr = new GlideRecord('x_58872_needit_needit');
+        if (gr.get(recordId)) { // Fetch the record by ID
+            result.hotcut_disco = gr.getValue('hotcut_disco');
+            result.reason_type = gr.getValue('reason_type');
+            result.reason_code = gr.getValue('reason_code');
+            
+        }
+
+        return JSON.stringify(result); // Return the result as a JSON string
+    }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-24 05:16:35</sys_created_on>
+        <sys_id>4cb2b9645303021002991cb0a0490ebe</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>GetNeeditDetails</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_4cb2b9645303021002991cb0a0490ebe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-24 05:56:27</sys_updated_on>
+    </sys_script_include>
+</record_update>
